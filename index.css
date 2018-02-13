@@ -1,0 +1,252 @@
+#notes-container,
+.barrage,
+.fin,
+.note,
+.title-content,
+.title-left {
+    position: absolute
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.txt {
+    font-family: \\30D2\30E9\30AE\30CE\89D2\30B4 ProN W3, Hiragino Kaku Gothic ProN, \\30E1\30A4\30EA\30AA, Meiryo, sans-serif
+}
+
+.pics {
+    width: 30%;
+    overflow: hidden;
+    transition: transform 6s, opacity 3s;
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+    opacity: 0
+}
+
+.pics,
+.pics:before {
+    position: absolute;
+    border-radius: 10px;
+    z-index: 1
+}
+
+.pics:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: inset 0 0 10px 10px #000
+}
+
+.pics img {
+    width: 100%;
+    display: block
+}
+
+.pics:first-of-type {
+    transition-duration: 12s;
+    transition-delay: 0s
+}
+
+.pics:nth-of-type(2) {
+    transition-duration: 10s;
+    transition-delay: 2s
+}
+
+.pics:nth-of-type(3) {
+    transition-duration: 8s;
+    transition-delay: 4s
+}
+
+.pics:nth-of-type(4) {
+    transition-duration: 6s;
+    transition-delay: 6s
+}
+
+.pics:nth-of-type(5) {
+    transition-duration: 4s;
+    transition-delay: 8s
+}
+
+.barrage {
+    font-size: 2rem;
+    color: #e5e5e5;
+    width: 2rem;
+    right: 1rem;
+    top: .5rem;
+    opacity: 0;
+    animation: barrage 5s ease-in-out
+}
+
+.barrage:nth-of-type(3n+2) {
+    top: 2.5rem;
+    right: 2rem
+}
+
+.barrage:nth-of-type(3n) {
+    top: 3.5rem;
+    right: 3rem
+}
+
+.barrage:first-of-type {
+    animation-delay: 0s
+}
+
+.barrage:nth-of-type(2) {
+    animation-delay: 4s
+}
+
+.barrage:nth-of-type(3) {
+    animation-delay: 8s
+}
+
+.barrage:nth-of-type(4) {
+    animation-delay: 12s
+}
+
+.barrage:nth-of-type(5) {
+    animation-delay: 16s
+}
+
+.barrage:nth-of-type(6) {
+    animation-delay: 20s
+}
+
+.barrage:nth-of-type(7) {
+    animation-delay: 24s
+}
+
+.barrage:nth-of-type(8) {
+    animation-delay: 28s
+}
+
+.barrage:nth-of-type(9) {
+    animation-delay: 32s
+}
+
+.barrage:nth-of-type(10) {
+    animation-delay: 36s
+}
+
+.barrage:nth-of-type(11) {
+    animation-delay: 40s
+}
+
+.barrage:nth-of-type(12) {
+    animation-delay: 44s
+}
+
+@keyframes barrage {
+    0%,
+    to {
+        opacity: 0
+    }
+    40%,
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(.895, .03, .685, .22)
+    }
+    0% {
+        transform: translateY(-3rem);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+    to {
+        transform: translateY(3rem)
+    }
+}
+
+.title-content,
+.title-fade,
+.title-left {
+    opacity: 0;
+    animation: fadeout 10s ease-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.title-left {
+    left: .5rem;
+    top: .25rem;
+    font-size: 2rem;
+    color: #fff82b;
+    background-image: linear-gradient(to right bottom, #32e9ff, #32e9ff, #000)
+}
+
+.title-content {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: #fff;
+    font-size: 2.4rem;
+    background-image: linear-gradient(90deg, #fff82b, #e8890c, red, #750ce8, #0d96ff)
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+.fin {
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1;
+    font-family: fantasy;
+    animation: finUp 2s ease-in
+}
+
+.fin p {
+    font-size: 1.5rem;
+    color: #fff
+}
+
+.fin p a {
+    color: #fff82b
+}
+
+@keyframes finUp {
+    0% {
+        transform: translateY(100%)
+    }
+    to {
+        transform: translateY(0)
+    }
+}
+
+#notes-container {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden
+}
+
+.note {
+    width: 50px;
+    height: 50px;
+    right: -50px;
+    bottom: -50px;
+    opacity: 0;
+    transition: transform 5s ease-in-out;
+    animation: note 6s ease-in-out
+}
+
+@keyframes note {
+    0%,
+    to {
+        opacity: 0
+    }
+    30%,
+    70% {
+        opacity: 1
+    }
+}
